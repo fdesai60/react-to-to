@@ -17,6 +17,7 @@ const TodoDisp =({list,setList})=>{
     return (
         <div>
             <h1>Todo list</h1>
+            {list.length===0 && <p>NO TO-DOS</p> }
             <div className="container">
                 {
                     list.map(

@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 import { useState } from "react"
-const Form=({setList})=>{
+export default function Form({setList}){
     const [newTodo,setNewTodo]=useState("")
     
     const handleAdd=(e)=>{
@@ -18,8 +18,8 @@ const Form=({setList})=>{
         setNewTodo("")
     }
     return (
-        <div>
-            <form onSubmit={handleSubmit} action="">
+        <div >
+            <form className='form' onSubmit={handleSubmit} action="">
                 <label htmlFor="new-todo">New item</label>
                 <input onChange={handleAdd} value= {newTodo} type="text" id="new-todo" />
                 <button>Add</button>
@@ -27,5 +27,3 @@ const Form=({setList})=>{
         </div>
     )
 }
-
-export default Form
