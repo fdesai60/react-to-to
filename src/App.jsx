@@ -7,10 +7,11 @@ import TodoDisp from "./TodoDisp"
 function App() {
   const [list,setList]=useState([])
 
+
   return (
     <>
       <Form setList={setList} />
-      <TodoDisp list={list}/>
+      <TodoDisp list={list} setList={setList}/>
 
     </>
   )

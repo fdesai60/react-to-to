@@ -1,6 +1,8 @@
+import { v4 as uuidv4 } from 'uuid';
 import { useState } from "react"
 const Form=({setList})=>{
     const [newTodo,setNewTodo]=useState("")
+    
     const handleAdd=(e)=>{
         setNewTodo(e.target.value)
     }
@@ -9,7 +11,7 @@ const Form=({setList})=>{
         e.preventDefault()
         setList(
             curr=>{
-              return [...curr,newTodo]
+              return [...curr,{newTodo,id:uuidv4(),checked:false}]
 
             }
         )
